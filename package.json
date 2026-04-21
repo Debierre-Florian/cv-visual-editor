@@ -1,0 +1,46 @@
+{
+  "name": "cv-visual-editor",
+  "version": "0.1.0",
+  "description": "Visual CSS editor for HTML CV files — non-destructive offset-based editing",
+  "main": "dist-electron/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "build:win": "npm run build && electron-builder --win",
+    "build:mac": "npm run build && electron-builder --mac",
+    "preview": "electron-vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "css-tree": "^3.1.0",
+    "lucide-react": "^0.511.0",
+    "parse5": "^7.2.1",
+    "react": "^18.3.1",
+    "react-colorful": "^5.6.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.4"
+  },
+  "devDependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@types/css-tree": "^2.3.9",
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "electron": "^35.1.2",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^3.1.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.1",
+    "vitest": "^3.1.2"
+  },
+  "build": {
+    "extends": "./electron-builder.yml"
+  }
+}

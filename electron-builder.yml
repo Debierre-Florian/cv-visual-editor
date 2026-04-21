@@ -1,0 +1,40 @@
+appId: com.cv-visual-editor.app
+productName: CV Visual Editor
+copyright: Copyright © 2025
+
+directories:
+  buildResources: build
+  output: release
+
+files:
+  - dist-electron/**/*
+  - "!dist-electron/**/*.map"
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: CV-Visual-Editor-${version}-setup.${ext}
+  icon: build/icon.ico
+
+mac:
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+    - target: zip
+      arch: [x64, arm64]
+  artifactName: CV-Visual-Editor-${version}-${arch}.${ext}
+  icon: build/icon.icns
+  category: public.app-category.productivity
+  identity: null
+  gatekeeperAssess: false
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: CV Visual Editor
+
+dmg:
+  title: CV Visual Editor
