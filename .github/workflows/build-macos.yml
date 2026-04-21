@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Build (x64)
-        run: npm run build && npx electron-builder --mac dmg zip --x64
+        run: npm run build && npx electron-builder --mac dmg zip --x64 --publish=never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: false
 
@@ -54,7 +54,7 @@ jobs:
         run: npm ci
 
       - name: Build (arm64)
-        run: npm run build && npx electron-builder --mac dmg zip --arm64
+        run: npm run build && npx electron-builder --mac dmg zip --arm64 --publish=never
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: false
 
